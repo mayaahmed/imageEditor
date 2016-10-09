@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--  Programmer : Maya Ahmed 
+      Files: index.html;
+      These file contains the codes for making a image gallery.
+      Date: "Aug 29 2016" -->
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Punjiri: Web and Mobile Technologies.</title>
+		<link rel="stylesheet" type="text/css" href="editor.css">
+
+	</head>
+
+	<body>
+      <div id="big_wrapper">
+          <div id="topStuff">
+          <header id="top_header">
+				<p>Image Editor</p>
+			</header>
+		  <nav id="top_menu">
+			          <ul>
+                
+                    <div id="myNav" class="overlay">
+                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> &times;</a>
+                      <div class="overlay-content">
+                       <p> &copy; Punjiri Web and Mobile Technologies, 2016. </p>
+                       <p> Email: maya.ahmed@gmail.com</p>
+                      </div>
+                    </div>
+
+                    <span style="font-size:30px; cursor:pointer" onclick="openNav()"> &equiv;</span>
+                  </li>
+                                    
+                </ul>
+			</nav>
+            </div>
+     
+
+
+
+<div id="galleryContainer">
+
+ 
+<div id="controls">
+
+<button   class="listingButton" onclick="slideOpen(fileDiv)" > File </button>  
+<div class="lightBorder" id="fileDiv">
+  <input type="button" class="closeButtonOptions" id="fileButton" value="&times"
+         onclick="slideClose(fileDiv, 'fileButton')"> 
+  
+  <input type="file" id="inputFileToLoad" >
+   <input type="button" id="buttonLoadFile" value ="Load Selected File"; 
+                                 onclick="loadImageFileAsURL()">   
+</div>  
+
+<button onclick="reflect()" class="listingButton"> Reflect </button>     
+
+<button class="listingButton" onclick="slideOpen(maskDiv)" > Mask </button> 
+
+<div class="lightBorder" id="maskDiv">
+  <input type="button" class="closeButtonOptions" id="maskButton" value="&times"
+         onclick="slideClose(maskDiv, 'maskButton')"> 
+<img src="circle.png"  height="40" width="40"   onclick="mask('circle')" >
+<img src="heart.png"  height="40" width="40"   onclick="mask('heart')" >
+<img src="polygon.png"  height="40" width="40"   onclick="mask('polygon')" >
+<img src="pipalleaf.png"  height="40" width="40"   onclick="mask('pipal')" >
+
+</div>
+ 
+
+<button   class="listingButton" onclick="slideOpen(resizeDiv)" > Resize </button>  
+<div class="lightBorder" id="resizeDiv">
+  <input type="button" class="closeButtonOptions" id="resizeButton" value="&times"
+         onclick="slideClose(resizeDiv, 'resizeButton')"> 
+ <p><label>Image Width: <input id="imageWidthRange" type="range" step="20" min="50" max="600" value="125"></label></p>
+ <p><label>Image Height: <input id="imageHeightRange" type="range" step="20" min="50" max="600" value="125"></label></p>
+
+ <button onclick="resize()" > Apply </button>
+
+</div>  
+
+</div>
+
+
+ <div id="container">
+
+</div>
+
+
+
+</div>
+
+</div> <!-- big wrapper -->
+
+
+
+ <script src="editor.js"></script> 
+<script src="dropdown.js"></script> 
+
+      
+</body>
+</html>
