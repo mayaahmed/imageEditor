@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<title>Punjiri: Web and Mobile Technologies.</title>
 		<link rel="stylesheet" type="text/css" href="editor.css">
+<link rel="stylesheet" type="text/css" href="slider.css">
 
 	</head>
 
@@ -50,36 +51,97 @@
   <input type="button" class="closeButtonOptions" id="fileButton" value="&times"
          onclick="slideClose(fileDiv, 'fileButton')"> 
   
-  <input type="file" id="inputFileToLoad" >
-   <input type="button" id="buttonLoadFile" value ="Load Selected File"; 
+  <input type="file" class="fileOptionsButton"   id="inputFileToLoad" >
+   <input type="button" class="fileOptionsButton"  id="buttonLoadFile" value ="Load Selected File"; 
                                  onclick="loadImageFileAsURL()">   
 </div>  
 
-<button onclick="reflect()" class="listingButton"> Reflect </button>     
+
+
+
+<button class="listingButton" onclick="slideOpen(reflectDiv)"> Reflect </button>
+<div class="lightBorder" id="reflectDiv">
+ <input type="button" class="closeButtonOptions" id="reflectButton" value="&times"
+         onclick="slideClose(reflectDiv, 'reflectButton')"> 
+<p> Axis: </p>
+<button class="reflectButtonOptions" onclick="changeReflectAxis('below ')"> Below </button>
+<button class="reflectButtonOptions" onclick="changeReflectAxis('above ')"> Above </button>
+<button class="reflectButtonOptions" onclick="changeReflectAxis('left ')"> Left </button>
+<button class="reflectButtonOptions" onclick="changeReflectAxis('right ')"> Right </button>
+
+<label>Distance: <input id="reflectRange"   type="range" step="1" min="-25" max="100" value="0"></label>
+   </div>  
 
 <button class="listingButton" onclick="slideOpen(maskDiv)" > Mask </button> 
 
 <div class="lightBorder" id="maskDiv">
   <input type="button" class="closeButtonOptions" id="maskButton" value="&times"
          onclick="slideClose(maskDiv, 'maskButton')"> 
-<img src="circle.png"  height="40" width="40"   onclick="mask('circle')" >
-<img src="heart.png"  height="40" width="40"   onclick="mask('heart')" >
-<img src="polygon.png"  height="40" width="40"   onclick="mask('polygon')" >
-<img src="pipalleaf.png"  height="40" width="40"   onclick="mask('pipal')" >
+<img src="circle.png" class="imgMaskDiv"  onclick="mask('circle')" >
+<img src="heart.png"  class="imgMaskDiv"   onclick="mask('heart')" >
+<img src="polygon.png" class="imgMaskDiv"   onclick="mask('polygon')" >
+<img src="pipalleaf.png"  class="imgMaskDiv" onclick="mask('pipal')" >
 
 </div>
  
 
 <button   class="listingButton" onclick="slideOpen(resizeDiv)" > Resize </button>  
-<div class="lightBorder" id="resizeDiv">
-  <input type="button" class="closeButtonOptions" id="resizeButton" value="&times"
-         onclick="slideClose(resizeDiv, 'resizeButton')"> 
- <p><label>Image Width: <input id="imageWidthRange" type="range" step="20" min="50" max="600" value="125"></label></p>
- <p><label>Image Height: <input id="imageHeightRange" type="range" step="20" min="50" max="600" value="125"></label></p>
 
- <button onclick="resize()" > Apply </button>
+<div class="lightBorder" id="resizeDiv">
+
+ <input type="button" class="closeButtonOptions" id="resizeButton" value="&times"
+         onclick="slideClose(resizeDiv, 'resizeButton')"> 
+
+<label>Image Width: <input id="imageWidthRange"   type="range" step="20" min="50" max="600" value="125"></label>
+<label>Image Height: <input id="imageHeightRange" type="range" step="20" min="50" max="600" value="125"></label>
 
 </div>  
+
+
+<button   class="listingButton" onclick="slideOpenE(editDiv)" >Edit Pictures </button>  
+
+<div class="editDiv" id="editDiv">
+  <input type="button" class="closeButtonOptions" id="editButton" value="&times"
+         onclick="slideClose(editDiv, 'editButton')"> 
+
+ 
+ <button  class="editButtonOptions"  onclick="slideOpen(blurDiv)" >Blur</button> 
+<div  class="editOptionsDiv"  id="blurDiv">
+<input type="button" class="closeButtonOptions" id="blurButton" value="&times"
+         onclick="slideClose(blurDiv, 'blurButton')"> 
+<p> Pixels: </p>
+ <input id="blurRange" type="range" step="0" min="1" max="20" value="4">
+</div>
+
+<button class="editButtonOptions" onclick="slideOpen(brightenDiv)">Brightness</button>
+<div  class="editOptionsDiv"  id="brightenDiv">
+<input type="button" class="closeButtonOptions" id="brightenButton" value="&times"
+         onclick="slideClose(brightenDiv, 'brightenButton')"> 
+<p> Percent: </p>
+ <input id="brightnessRange" type="range" step="5" min="50" max="250" value="50">
+</div>
+
+<button class="editButtonOptions"  onclick="slideOpen(contrastDiv)">Contrast</button>
+<div  class="editOptionsDiv"  id="contrastDiv">
+<input type="button" class="closeButtonOptions" id="contrastButton" value="&times"
+         onclick="slideClose(contrastDiv, 'contrastButton')"> 
+<p> Percent: </p> 
+<input id="contrastRange" type="range" step="5" min="50" max="400" value="50">
+</div>
+
+
+
+ <button class="editButtonOptions" onclick="slideOpen(grayscaleDiv)">Grayscale</button>
+<div  class="editOptionsDiv"  id="grayscaleDiv">
+<input type="button" class="closeButtonOptions" id="grayscaleButton" value="&times"
+         onclick="slideClose(grayscaleDiv, 'grayscaleButton')"> 
+<p> Percent: </p>
+ <input id="grayscaleRange" type="range" step="5" min="0" max="100" value="50">
+</div>
+
+
+
+</div> <!-- editDiv -->
 
 </div>
 
@@ -88,9 +150,9 @@
 
 </div>
 
-
-
 </div>
+
+
 
 </div> <!-- big wrapper -->
 
