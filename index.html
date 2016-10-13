@@ -46,7 +46,7 @@
  
 <div id="controls">
 
-<button   class="listingButton" onclick="slideOpen(fileDiv)" > File </button>  
+<div   class="listingButton" onclick="slideOpen(fileDiv)" > File </div>  
 <div class="lightBorder" id="fileDiv">
   <input type="button" class="closeButtonOptions" id="fileButton" value="&times"
          onclick="slideClose(fileDiv, 'fileButton')"> 
@@ -59,20 +59,20 @@
 
 
 
-<button class="listingButton" onclick="slideOpen(reflectDiv)"> Reflect </button>
+<div class="listingButton" onclick="slideOpen(reflectDiv)"> Reflect </div>
 <div class="lightBorder" id="reflectDiv">
  <input type="button" class="closeButtonOptions" id="reflectButton" value="&times"
          onclick="slideClose(reflectDiv, 'reflectButton')"> 
 <p> Axis: </p>
-<button class="reflectButtonOptions" onclick="changeReflectAxis('below ')"> Below </button>
-<button class="reflectButtonOptions" onclick="changeReflectAxis('above ')"> Above </button>
-<button class="reflectButtonOptions" onclick="changeReflectAxis('left ')"> Left </button>
-<button class="reflectButtonOptions" onclick="changeReflectAxis('right ')"> Right </button>
+<div class="reflectButtonOptions" onclick="changeReflectAxis('below ')"> Below </div>
+<div class="reflectButtonOptions" onclick="changeReflectAxis('above ')"> Above </div>
+<div class="reflectButtonOptions" onclick="changeReflectAxis('left ')"> Left </div>
+<div class="reflectButtonOptions" onclick="changeReflectAxis('right ')"> Right </div>
 
 <label>Distance: <input id="reflectRange"   type="range" step="1" min="-25" max="100" value="0"></label>
    </div>  
 
-<button class="listingButton" onclick="slideOpen(maskDiv)" > Mask </button> 
+<div class="listingButton" onclick="slideOpen(maskDiv)" > Mask </div> 
 
 <div class="lightBorder" id="maskDiv">
   <input type="button" class="closeButtonOptions" id="maskButton" value="&times"
@@ -85,7 +85,7 @@
 </div>
  
 
-<button   class="listingButton" onclick="slideOpen(resizeDiv)" > Resize </button>  
+<div   class="listingButton" onclick="slideOpen(resizeDiv)" > Resize </div>  
 
 <div class="lightBorder" id="resizeDiv">
 
@@ -98,14 +98,13 @@
 </div>  
 
 
-<button   class="listingButton" onclick="slideOpenE(editDiv)" >Edit Pictures </button>  
-
+<div   class="listingButton" onclick="slideOpenE(editDiv)" >Filter </div>  
 <div class="editDiv" id="editDiv">
   <input type="button" class="closeButtonOptions" id="editButton" value="&times"
          onclick="slideClose(editDiv, 'editButton')"> 
 
  
- <button  class="editButtonOptions"  onclick="slideOpen(blurDiv)" >Blur</button> 
+ <div  class="editButtonOptions"  onclick="slideOpen(blurDiv)" >Blur</div> 
 <div  class="editOptionsDiv"  id="blurDiv">
 <input type="button" class="closeButtonOptions" id="blurButton" value="&times"
          onclick="slideClose(blurDiv, 'blurButton')"> 
@@ -113,7 +112,7 @@
  <input id="blurRange" type="range" step="0" min="1" max="20" value="4">
 </div>
 
-<button class="editButtonOptions" onclick="slideOpen(brightenDiv)">Brightness</button>
+<div class="editButtonOptions" onclick="slideOpen(brightenDiv)">Brightness</div>
 <div  class="editOptionsDiv"  id="brightenDiv">
 <input type="button" class="closeButtonOptions" id="brightenButton" value="&times"
          onclick="slideClose(brightenDiv, 'brightenButton')"> 
@@ -121,7 +120,7 @@
  <input id="brightnessRange" type="range" step="5" min="50" max="250" value="50">
 </div>
 
-<button class="editButtonOptions"  onclick="slideOpen(contrastDiv)">Contrast</button>
+<div class="editButtonOptions"  onclick="slideOpen(contrastDiv)">Contrast</div>
 <div  class="editOptionsDiv"  id="contrastDiv">
 <input type="button" class="closeButtonOptions" id="contrastButton" value="&times"
          onclick="slideClose(contrastDiv, 'contrastButton')"> 
@@ -130,8 +129,7 @@
 </div>
 
 
-
- <button class="editButtonOptions" onclick="slideOpen(grayscaleDiv)">Grayscale</button>
+<div class="editButtonOptions" onclick="slideOpen(grayscaleDiv)">Grayscale</div>
 <div  class="editOptionsDiv"  id="grayscaleDiv">
 <input type="button" class="closeButtonOptions" id="grayscaleButton" value="&times"
          onclick="slideClose(grayscaleDiv, 'grayscaleButton')"> 
@@ -140,15 +138,54 @@
 </div>
 
 
+<div class="editButtonOptions" onclick="slideOpen(huerotateDiv)">Huerotate</div>
+<div  class="editOptionsDiv"  id="huerotateDiv">
+<input type="button" class="closeButtonOptions" id="huerotateButton" value="&times"
+         onclick="slideClose(huerotateDiv, 'huerotateButton')"> 
+<p> Degree: </p>
+ <input id="huerotateRange" type="range" step="5" min="0" max="360" value="10">
+</div>
+
+
+<div class="editButtonOptions" onclick="slideOpen(invertDiv)">Invert</div>
+<div  class="editOptionsDiv"  id="invertDiv">
+<input type="button" class="closeButtonOptions" id="invertButton" value="&times"
+         onclick="slideClose(invertDiv, 'invertButton')"> 
+<p> percent: </p>
+ <input id="invertRange" type="range" step="1" min="0" max="100" value="10">
+</div>
+
+
+<div class="editButtonOptions" onclick="slideOpen(opacityDiv)">Opacity</div>
+<div  class="editOptionsDiv"  id="opacityDiv">
+<input type="button" class="closeButtonOptions" id="opacityButton" value="&times"
+         onclick="slideClose(opacityDiv, 'opacityButton')"> 
+<p> percent: </p>
+ <input id="opacityRange" type="range" step="1" min="0" max="100" value="10">
+</div>
+
+
+<div class="editButtonOptions" onclick="slideOpen(sepiaDiv)">Sepia</div>
+<div  class="editOptionsDiv"  id="sepiaDiv">
+<input type="button" class="closeButtonOptions" id="sepiaButton" value="&times"
+         onclick="slideClose(sepiaDiv, 'sepiaButton')"> 
+<p> percent: </p>
+ <input id="sepiaRange" type="range" step="1" min="0" max="100" value="10">
+</div>
+
+
+<div class="editButtonOptions" onclick="slideOpen(saturateDiv)">Saturate</div>
+<div  class="editOptionsDiv"  id="saturateDiv">
+<input type="button" class="closeButtonOptions" id="saturateButton" value="&times"
+         onclick="slideClose(saturateDiv, 'saturateButton')"> 
+<input id="saturateRange" type="range" step="1" min="0" max="200" value="10">
+</div>
+
 
 </div> <!-- editDiv -->
+</div> <!--controlsDiv-->
 
-</div>
-
-
- <div id="container">
-
-</div>
+<div id="container"> </div>
 
 </div>
 
