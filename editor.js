@@ -11,9 +11,11 @@ contrastValue="100%";
 grayscaleValue="0%";
 belowValue="0px";
 reflectChoice="below ";
-
-
-
+huerotateValue="0deg";
+invertValue="0%";
+opacityValue="100%";
+sepiaValue="0%";
+saturateValue="100%";
 
 
 
@@ -26,6 +28,11 @@ function init() {
   var contrastBtn = document.getElementById("contrastRange");
   var grayscaleBtn = document.getElementById("grayscaleRange");
   var reflectBtn = document.getElementById("reflectRange");
+  var huerotateBtn = document.getElementById("huerotateRange");
+ var invertBtn = document.getElementById("invertRange");
+ var opacityBtn = document.getElementById("opacityRange");
+var sepiaBtn = document.getElementById("sepiaRange");
+var saturateBtn = document.getElementById("saturateRange");
     imageWidthBtn.addEventListener("input", changeImageWidth, false);
     imageHeightBtn.addEventListener("input", changeImageHeight, false);
     blurBtn.addEventListener("input", changeBlur, false);
@@ -33,6 +40,11 @@ function init() {
     contrastBtn.addEventListener("input", changeContrast, false);
     grayscaleBtn.addEventListener("input", changeGrayscale, false);
       reflectBtn.addEventListener("input", changeReflect, false);
+      huerotateBtn.addEventListener("input", changeHuerotate, false);
+ invertBtn.addEventListener("input", changeinvert, false);
+ opacityBtn.addEventListener("input", changeopacity, false);
+ sepiaBtn.addEventListener("input", changesepia, false);
+ saturateBtn.addEventListener("input", changesaturate, false);
 }
 
 window.addEventListener('load', init, false);
@@ -49,6 +61,36 @@ function changeReflect() {
   belowValue= string+"px";
   reflect();
 }
+
+function changeHuerotate() {
+  var string = this.value;
+  huerotateValue= string+"deg";
+  updateStyle();
+ }
+
+function changeinvert() {
+  var string = this.value;
+  invertValue= string+"%";
+  updateStyle();
+ }
+
+function changeopacity() {
+  var string = this.value;
+  opacityValue= string+"%";
+  updateStyle();
+ }
+
+function changesepia() {
+  var string = this.value;
+  sepiaValue= string+"%";
+  updateStyle();
+ }
+
+function changesaturate() {
+  var string = this.value;
+  saturateValue= string;
+  updateStyle();
+ }
 
 
 function changeBlur() {
@@ -77,8 +119,7 @@ function changeGrayscale() {
 
 
 function updateStyle(){
-var styleString= "-webkit-filter: blur("
-+blurValue+ ") brightness(" +brightnessValue+ ") contrast(" +contrastValue+ ") grayscale("+ grayscaleValue +")";
+  var styleString= "-webkit-filter: blur("+blurValue+ ") brightness(" +brightnessValue+ ") contrast(" +contrastValue+ ") grayscale("+ grayscaleValue + ") hue-rotate(" + huerotateValue+ ") invert(" + invertValue+ ") opacity(" + opacityValue+ ") sepia(" + sepiaValue + ") saturate(" + saturateValue+ ")";
   console.log(styleString);
 galleryImages[0].style= styleString;
 }
