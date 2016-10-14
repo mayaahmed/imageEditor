@@ -211,20 +211,20 @@ function resize(){
 
 function slideOpen(el){
 el.style.transition="height 0.5s linear 0s";
-el.style.height="20%";
+el.style.height="175px";
 el.style.visibility="visible";
 }
 
 
 function slideOpenE(el){
 el.style.transition="height 0.5s linear 0s";
-el.style.height="70%";
+el.style.height="500px";
 el.style.visibility="visible";
 }
 
 function slideOpenM(el){
 el.style.transition="height 0.5s linear 0s";
-el.style.height="100%";
+el.style.height="500px";
 el.style.visibility="visible";
 }
 
